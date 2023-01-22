@@ -1,7 +1,7 @@
 package Colecoes;
 
+import Fonte.*;
 import Interfaces.INotasFiscais;
-import Obj.NotaFiscal;
 
 import java.util.ArrayList;
 

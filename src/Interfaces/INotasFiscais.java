@@ -1,5 +1,7 @@
 package Interfaces;
 
+import Fonte.*;
+
 /**
  * Interface que especifica os métodos míninos para manipular uma coleção de notas fiscais.
  * @author Aline

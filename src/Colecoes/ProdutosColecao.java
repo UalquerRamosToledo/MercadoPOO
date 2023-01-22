@@ -1,7 +1,7 @@
 package Colecoes;
 
 import Interfaces.IProdutos;
-import Obj.Produto;
+import Fonte.Produto;
 
 public class ProdutosColecao implements IProdutos {
     /**

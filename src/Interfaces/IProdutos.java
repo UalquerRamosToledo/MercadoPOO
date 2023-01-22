@@ -1,6 +1,6 @@
 package Interfaces;
 
-import Obj.*;
+import Fonte.*;
 
 /**
  * Interface que especifica os métodos míninos para manipular uma coleção de produtos

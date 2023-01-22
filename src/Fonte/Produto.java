@@ -1,4 +1,4 @@
-package Obj;
+package Fonte;
 
 public abstract class Produto {
     private int codigo;

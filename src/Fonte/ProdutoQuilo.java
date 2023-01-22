@@ -1,4 +1,4 @@
-package Obj;
+package Fonte;
 
 public class ProdutoQuilo extends Produto {
     private double quantidade;
