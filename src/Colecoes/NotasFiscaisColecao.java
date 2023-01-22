@@ -21,7 +21,11 @@ public class NotasFiscaisColecao implements INotasFiscais {
      */
     @Override
     public void addNotaFiscal(NotaFiscal nf) throws Exception {
-
+        try{
+            relacaoDeNotasFiscais.add(nf);
+        }catch (Exception e){
+            System.out.println("Não foi possível salvar a NF.");
+        }
     }
 
     /**
