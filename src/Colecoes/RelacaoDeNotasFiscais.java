@@ -5,10 +5,10 @@ import Interfaces.INotasFiscais;
 
 import java.util.ArrayList;
 
-public class NotasFiscaisColecao implements INotasFiscais {
+public class RelacaoDeNotasFiscais implements INotasFiscais {
     private ArrayList<NotaFiscal> relacaoDeNotasFiscais;
 
-    public NotasFiscaisColecao() {
+    public RelacaoDeNotasFiscais() {
         relacaoDeNotasFiscais = new ArrayList<NotaFiscal>();
     }
 

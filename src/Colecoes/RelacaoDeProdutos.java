@@ -5,14 +5,14 @@ import Fonte.Produto;
 
 import java.util.ArrayList;
 
-public class ProdutosColecao implements IProdutos {
+public class RelacaoDeProdutos implements IProdutos {
     /**
      * Array do tipo Produto
      * @autor Ualquer
      */
     private ArrayList<Produto> listaDeProdutos;
 
-    public ProdutosColecao(ArrayList<Produto> listaDeProdutos) {
+    public RelacaoDeProdutos(ArrayList<Produto> listaDeProdutos) {
         this.listaDeProdutos = listaDeProdutos;
     }
 
