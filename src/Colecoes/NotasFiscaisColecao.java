@@ -9,8 +9,7 @@ public class NotasFiscaisColecao implements INotasFiscais {
     private ArrayList<NotaFiscal> relacaoDeNotasFiscais;
 
     public NotasFiscaisColecao() {
-
-
+        relacaoDeNotasFiscais = new ArrayList<NotaFiscal>();
     }
 
     /**
@@ -20,12 +19,8 @@ public class NotasFiscaisColecao implements INotasFiscais {
      * @throws Exception Lança exceção quando a nota fiscal não pode ser adicionada.
      */
     @Override
-    public void addNotaFiscal(NotaFiscal nf) throws Exception {
-        try{
-            relacaoDeNotasFiscais.add(nf);
-        }catch (Exception e){
-            System.out.println("Não foi possível salvar a NF.");
-        }
+    public void addNotaFiscal(NotaFiscal nf) {
+        relacaoDeNotasFiscais.add(nf);
     }
 
     /**
@@ -36,7 +31,12 @@ public class NotasFiscaisColecao implements INotasFiscais {
      */
     @Override
     public void removeNotaFiscal(int codigo) throws Exception {
-
+        for(NotaFiscal notaFiscal : relacaoDeNotasFiscais){
+            if(notaFiscal.getCodigo() == codigo){
+                relacaoDeNotasFiscais.remove(notaFiscal);
+            }
+        }
+        throw new IllegalArgumentException("Não foi possível remover! O código informado é inválido!");
     }
 
     /**
@@ -48,7 +48,12 @@ public class NotasFiscaisColecao implements INotasFiscais {
      */
     @Override
     public NotaFiscal getNotaFiscal(int codigo) throws Exception {
-        return null;
+        for (NotaFiscal notaFiscal : relacaoDeNotasFiscais){
+            if(notaFiscal.getCodigo()==codigo){
+                return notaFiscal;
+            }
+        }
+        throw new IllegalArgumentException("Código não encontrado!");
     }
 
     /**
@@ -60,31 +65,45 @@ public class NotasFiscaisColecao implements INotasFiscais {
      */
     @Override
     public double getTotal(int codigo) throws Exception {
-        return 0;
+        for (NotaFiscal notaFiscal : relacaoDeNotasFiscais){
+            if(notaFiscal.getCodigo() == codigo){
+                return notaFiscal.valorTotalNF();
+            }
+        }
+        throw new IllegalArgumentException("Código não encontrado!");
     }
 
     /**
      * Adiciona um item a nota fiscal com o código informado.
      *
      * @param codigo Código da nota fiscal na qual o item deve ser adicionado.
-     * @param item   Item a ser adicionado.
+     * @param produto   Item a ser adicionado.
      * @throws Exception Lança exceção quando não existir nota fiscal com o código informado.
      */
     @Override
-    public void addItem(int codigo, Item item) throws Exception {
-
+    public void addItem(int codigo, Produto produto) throws Exception {
+        for (NotaFiscal notaFiscal : relacaoDeNotasFiscais){
+            if (notaFiscal.getCodigo() == codigo){
+                notaFiscal.adicionarProduto(produto);
+            }
+        }
+        throw new IllegalArgumentException("Código não encontrado!");
     }
 
     /**
      * Remove um item da nota fiscal com o código informado.
      *
      * @param codigo Código da nota fiscal na qual o item deve ser removido.
-     * @param item   Item a ser removido.
+     * @param produto   Item a ser removido.
      * @throws Exception Lança exceção quando não existir nota fiscal com o código informado ou
      *                   quando o Item informado não existir.
      */
     @Override
-    public void removeItem(int codigo, Item item) throws Exception {
-
+    public void removeItem(int codigo, Produto produto) throws Exception {
+        for(NotaFiscal notaFiscal : relacaoDeNotasFiscais){
+            if (notaFiscal.getCodigo() == codigo){
+                notaFiscal.removerProdutoNF(produto);
+            }
+        }
     }
 }

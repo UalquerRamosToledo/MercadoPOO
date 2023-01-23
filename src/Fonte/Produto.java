@@ -52,4 +52,8 @@ public abstract class Produto {
     public void setPreco(double preco) throws  Exception{
         this.preco = preco;
     };
+
+    public double getPreco() {
+        return preco;
+    }
 }
