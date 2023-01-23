@@ -12,8 +12,8 @@ public class ProdutosColecao implements IProdutos {
      */
     private ArrayList<Produto> listaDeProdutos;
 
-    public ProdutosColecao() {
-        listaDeProdutos = new ArrayList<>();
+    public ProdutosColecao(ArrayList<Produto> listaDeProdutos) {
+        this.listaDeProdutos = listaDeProdutos;
     }
 
     /**
