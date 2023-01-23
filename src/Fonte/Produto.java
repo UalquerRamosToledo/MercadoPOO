@@ -32,6 +32,20 @@ public abstract class Produto {
 
     /**
      *
+      * @param quantidade é o valor a ser adicionado ao estoque do produto
+     * @throws Exception
+     */
+    public abstract void adicionarQuantidade(double quantidade) throws Exception;
+
+    /**
+     *
+     * @param quantidade valor a ser subtraido do estoque do produto
+     * @throws Exception
+     */
+    public abstract void subtrairQuantidade(double quantidade) throws Exception;
+
+    /**
+     *
      * @param preco será o novo preço a ser setado no Produto.
      * @throws Exception
      */

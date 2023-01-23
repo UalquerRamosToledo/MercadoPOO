@@ -18,6 +18,17 @@ public class ProdutoUnidade extends Produto{
         this.quantidade = (int) quantidade;
     }
 
+    /**
+     * @param quantidade valor a ser subtraido do estoque do produto
+     * @throws Exception
+     */
+    @Override
+    public void subtrairQuantidade(double quantidade) throws Exception {
+        if(quantidade > 0)
+            this.quantidade -= (int) quantidade;
+        throw new IllegalArgumentException("Não foi possível alterar! O número informado é inválido!");
+    }
+
     public int getQuantidade() {
         return quantidade;
     }
@@ -33,5 +44,16 @@ public class ProdutoUnidade extends Produto{
     @Override
     public void setPreco(double preco) throws Exception {
         super.setPreco(preco);
+    }
+
+    /**
+     * @param quantidade é o valor a ser adicionado ao estoque do produto
+     * @throws Exception
+     */
+    @Override
+    public void adicionarQuantidade(double quantidade) throws Exception {
+        if(quantidade > 0)
+            this.quantidade += (int) quantidade;
+        throw new IllegalArgumentException("Não foi possível alterar! O número informado é inválido!");
     }
 }

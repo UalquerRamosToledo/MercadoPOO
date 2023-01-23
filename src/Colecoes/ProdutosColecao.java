@@ -115,12 +115,10 @@ public class ProdutosColecao implements IProdutos {
     public void addQuantidade(int codigo, double quantidade) throws Exception {
         for (Produto produto : listaDeProdutos){
             if(codigo == produto.getCodigo()){
-                // TODO: 23/01/2023 terminar isso aqui
+                produto.adicionarQuantidade(quantidade);
             }
         }
         //perguntar como eu diferencio as execões para a professora
-        throw new IllegalArgumentException("Não foi possível alterar!");
-
     }
 
     /**

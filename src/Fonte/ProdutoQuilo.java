@@ -27,6 +27,28 @@ public class ProdutoQuilo extends Produto {
         super.setPreco(preco);
     }
 
+    /**
+     * @param quantidade é o valor a ser adicionado ao estoque do produto
+     * @throws Exception
+     */
+    @Override
+    public void adicionarQuantidade(double quantidade) throws Exception {
+        if(quantidade > 0)
+            this.quantidade += quantidade;
+        throw new IllegalArgumentException("Não foi possível alterar! O número informado é inválido!");
+    }
+
+    /**
+     * @param quantidade valor a ser subtraido do estoque do produto
+     * @throws Exception
+     */
+    @Override
+    public void subtrairQuantidade(double quantidade) throws Exception {
+        if(quantidade > 0)
+            this.quantidade -= quantidade;
+        throw new IllegalArgumentException("Não foi possível alterar! O número informado é inválido!");
+    }
+
     public double getQuantidade() {
         return quantidade;
     }
