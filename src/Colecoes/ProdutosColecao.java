@@ -3,7 +3,19 @@ package Colecoes;
 import Interfaces.IProdutos;
 import Fonte.Produto;
 
+import java.util.ArrayList;
+
 public class ProdutosColecao implements IProdutos {
+    /**
+     * Array do tipo Produto
+     * @autor Ualquer
+     */
+    private ArrayList<Produto> listaDeProdutos;
+
+    public ProdutosColecao(ArrayList<Produto> listaDeProdutos) {
+        this.listaDeProdutos = listaDeProdutos;
+    }
+
     /**
      * Adiciona um produto ao estoque.
      *
@@ -12,21 +24,26 @@ public class ProdutosColecao implements IProdutos {
      */
     @Override
     public void addProduto(Produto p) throws Exception {
-
+        listaDeProdutos.add(p);
     }
 
     /**
      * Remove o produto com código informado.
      *
      * @param codigo Código do produto a ser removido.
+     * @return
      * @throws Exception Lança exceção quando o produto não pode ser removido, por exemplo,
      *                   porque não existe produto cadastrado com o código informado.
      */
     @Override
-    public void removeProduto(int codigo) throws Exception {
-
+    public Produto removeProduto(int codigo) throws Exception{
+        for (Produto produto : listaDeProdutos) {
+            if (produto.getCodigo() == codigo) {
+                listaDeProdutos.remove(produto);
+            }
+        }
+        throw new IllegalArgumentException("Não encontrado!");
     }
-
     /**
      * Captura o produto com o código informado.
      *
@@ -35,9 +52,15 @@ public class ProdutosColecao implements IProdutos {
      * @throws Exception Lança exceção quando não existe produto
      *                   com o código informado.
      */
+
     @Override
     public Produto getProduto(int codigo) throws Exception {
-        return null;
+        for (Produto produto : listaDeProdutos){
+            if(codigo == produto.getCodigo()){
+                return produto;
+            }
+        }
+        throw new IllegalArgumentException("Não encontrado!");
     }
 
     /**
@@ -50,6 +73,14 @@ public class ProdutosColecao implements IProdutos {
      */
     @Override
     public void updateQuantidade(int codigo, double nova) throws Exception {
+        for (Produto produto : listaDeProdutos){
+            if(codigo == produto.getCodigo()){
+                produto.receberQuantidade(nova);
+            }
+        }
+        //perguntar como eu diferencio as execões para a professora
+        throw new IllegalArgumentException("Não foi possível alterar!");
+
 
     }
 
@@ -63,7 +94,13 @@ public class ProdutosColecao implements IProdutos {
      */
     @Override
     public void updatePreco(int codigo, double novo) throws Exception {
-
+        for (Produto produto : listaDeProdutos){
+            if(codigo == produto.getCodigo()){
+                produto.setPreco(novo);
+            }
+        }
+        //perguntar como eu diferencio as execões para a professora
+        throw new IllegalArgumentException("Não foi possível alterar!");
     }
 
     /**
@@ -76,6 +113,13 @@ public class ProdutosColecao implements IProdutos {
      */
     @Override
     public void addQuantidade(int codigo, double quantidade) throws Exception {
+        for (Produto produto : listaDeProdutos){
+            if(codigo == produto.getCodigo()){
+                // TODO: 23/01/2023 terminar isso aqui
+            }
+        }
+        //perguntar como eu diferencio as execões para a professora
+        throw new IllegalArgumentException("Não foi possível alterar!");
 
     }
 

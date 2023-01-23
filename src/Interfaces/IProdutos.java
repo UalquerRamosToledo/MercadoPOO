@@ -16,11 +16,13 @@ public interface IProdutos {
 
     /**
      * Remove o produto com código informado.
+     *
      * @param codigo Código do produto a ser removido.
-     * @throws java.lang.Exception Lança exceção quando o produto não pode ser removido, por exemplo, 
-     * porque não existe produto cadastrado com o código informado.
+     * @return
+     * @throws java.lang.Exception Lança exceção quando o produto não pode ser removido, por exemplo,
+     *                             porque não existe produto cadastrado com o código informado.
      */
-    public abstract void removeProduto(int codigo) throws Exception;
+    public abstract Produto removeProduto(int codigo) throws Exception;
 
     /**
      * Captura o produto com o código informado.

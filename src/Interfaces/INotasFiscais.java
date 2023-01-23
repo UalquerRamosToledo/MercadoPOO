@@ -1,7 +1,5 @@
 package Interfaces;
-
 import Fonte.*;
-
 /**
  * Interface que especifica os métodos míninos para manipular uma coleção de notas fiscais.
  * @author Aline
@@ -13,7 +11,7 @@ public interface INotasFiscais {
      * @param nf Nota fiscal a ser adicionada.
      * @throws java.lang.Exception Lança exceção quando a nota fiscal não pode ser adicionada.
      */
-    public abstract void addNotaFiscal(NotaFiscal nf) throws Exception;
+    public abstract void addNotaFiscal(NotaFiscal nf);
 
     /**
      * Remove a nota fiscal com código informado.
