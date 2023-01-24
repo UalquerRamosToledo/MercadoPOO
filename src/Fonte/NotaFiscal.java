@@ -8,9 +8,9 @@ import java.util.ArrayList;
 public class NotaFiscal {
     private int codigo;
     private LocalDateTime data;
-    private ArrayList<Produto> relacaoDeItens;
+    private ArrayList<Item> relacaoDeItens;
 
-    public NotaFiscal(int codigo, ArrayList<Produto> relacaoDeItens) {
+    public NotaFiscal(int codigo, ArrayList<Item> relacaoDeItens) {
         this.codigo = codigo;
         this.relacaoDeItens = relacaoDeItens;
     }
@@ -25,7 +25,7 @@ public class NotaFiscal {
      */
     public double valorTotalNF(){
         double valorTotal = 0;
-        for(Produto produto : relacaoDeItens){
+        for(Item produto : relacaoDeItens){
             valorTotal += produto.getPreco();
         }
         return valorTotal;
@@ -45,7 +45,7 @@ public class NotaFiscal {
      * @throws Exception lança se o produto não estiver na nota fiscal
      */
     public void removerProdutoNF(Produto produto) throws Exception{
-        for (Produto p: relacaoDeItens){
+        for (Item p: relacaoDeItens){
             if (p.getCodigo() == produto.getCodigo()){
                 relacaoDeItens.remove(p);
             }
