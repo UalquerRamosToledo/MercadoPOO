@@ -25,29 +25,29 @@ public class NotaFiscal {
      */
     public double valorTotalNF(){
         double valorTotal = 0;
-        for(Item produto : relacaoDeItens){
-            valorTotal += produto.getPreco();
+        for(Item item : relacaoDeItens){
+            valorTotal += item.getValorTotal();
         }
         return valorTotal;
     }
 
     /**
      *
-     * @param produto produto a ser adicionado ao array
+     * @param item produto a ser adicionado ao array
      */
-    public void adicionarProduto(Produto produto){
-        relacaoDeItens.add(produto);
+    public void adicionarProduto(Item item){
+        relacaoDeItens.add(item);
     }
 
     /**
      *
-     * @param produto produto a ser removido da nota fiscal
+     * @param item item a ser removido da nota fiscal
      * @throws Exception lança se o produto não estiver na nota fiscal
      */
-    public void removerProdutoNF(Produto produto) throws Exception{
-        for (Item p: relacaoDeItens){
-            if (p.getCodigo() == produto.getCodigo()){
-                relacaoDeItens.remove(p);
+    public void removerItemNF(Item item) throws Exception{
+        for (Item i: relacaoDeItens){
+            if (i.getCodigo() == i.getCodigo()){
+                relacaoDeItens.remove(item);
             }
         }
         throw new IllegalArgumentException("Código não encontrado!");

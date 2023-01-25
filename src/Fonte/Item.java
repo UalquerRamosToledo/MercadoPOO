@@ -3,14 +3,14 @@ package Fonte;
 public class Item {
     private int quantidade;
     private Produto produto;
-    private double valorUnitario;
+    private double preco;
     private double valorTotal;
 
     public Item(Produto produto, int quantidade) {
         this.quantidade = quantidade;
         this.produto = produto;
-        this.valorUnitario = 0;
-        this.valorTotal = 0;
+        this.preco = produto.getPreco();
+        this.valorTotal = produto.getPreco() * quantidade;
     }
 
     public int getQuantidade() {
@@ -19,6 +19,7 @@ public class Item {
 
     public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
+        valorTotal = produto.getPreco() * quantidade;
     }
 
     public Produto getProduto() {
@@ -29,12 +30,12 @@ public class Item {
         this.produto = produto;
     }
 
-    public double getValorUnitario() {
-        return valorUnitario;
+    public double getPreco() {
+        return preco;
     }
 
-    public void setValorUnitario(double valorUnitario) {
-        this.valorUnitario = valorUnitario;
+    public void setPreco(double preco) {
+        this.preco = preco;
     }
 
     public double getValorTotal() {
@@ -47,6 +48,6 @@ public class Item {
 
     @Override
     public String toString() {
-        return "Item: " + "Quantidade: " + quantidade + ", Produto: " + produto.getNome() + ", Valor Unitário: " + valorUnitario + ", Preço: " + valorTotal;
+        return "Item: " + "Quantidade: " + quantidade + ", Produto: " + produto.getNome() + ", Valor Unitário: " + preco + ", Preço: " + valorTotal;
     }
 }
