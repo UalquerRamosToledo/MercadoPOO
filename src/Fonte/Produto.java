@@ -56,4 +56,7 @@ public abstract class Produto {
     public double getPreco() {
         return preco;
     }
+    public String getNome(){
+        return this.nome;
+    }
 }

@@ -44,4 +44,9 @@ public class Item {
     public void setValorTotal(double valorTotal) {
         this.valorTotal = valorTotal;
     }
+
+    @Override
+    public String toString() {
+        return "Item: " + "Quantidade: " + quantidade + ", Produto: " + produto.getNome() + ", Valor Unitário: " + valorUnitario + ", Preço: " + valorTotal;
+    }
 }
