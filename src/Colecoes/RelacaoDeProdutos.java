@@ -12,8 +12,8 @@ public class RelacaoDeProdutos implements IProdutos {
      */
     private ArrayList<Produto> relacaoDeProdutos;
 
-    public RelacaoDeProdutos(ArrayList<Produto> relacaoDeProdutos) {
-        this.relacaoDeProdutos = relacaoDeProdutos;
+    public RelacaoDeProdutos() {
+        this.relacaoDeProdutos = new ArrayList<Produto>();
     }
 
     /**
@@ -24,7 +24,11 @@ public class RelacaoDeProdutos implements IProdutos {
      */
     @Override
     public void addProduto(Produto p) throws Exception {
-        relacaoDeProdutos.add(p);
+        try {
+            relacaoDeProdutos.add(p);
+        }catch (Exception e){
+            System.out.println("Não foi possível adicionar o produto");
+        }
     }
 
     /**
@@ -132,5 +136,12 @@ public class RelacaoDeProdutos implements IProdutos {
     @Override
     public void subQuantidade(int codigo, double quantidade) throws Exception {
 
+    }
+
+    @Override
+    public String toString() {
+        return "RelacaoDeProdutos{" +
+                "relacaoDeProdutos=" + relacaoDeProdutos +
+                '}';
     }
 }
