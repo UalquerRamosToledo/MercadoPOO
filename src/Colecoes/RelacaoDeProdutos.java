@@ -5,15 +5,15 @@ import Fonte.Produto;
 
 import java.util.ArrayList;
 
-public class ProdutosColecao implements IProdutos {
+public class RelacaoDeProdutos implements IProdutos {
     /**
      * Array do tipo Produto
      * @autor Ualquer
      */
-    private ArrayList<Produto> listaDeProdutos;
+    private ArrayList<Produto> relacaoDeProdutos;
 
-    public ProdutosColecao(ArrayList<Produto> listaDeProdutos) {
-        this.listaDeProdutos = listaDeProdutos;
+    public RelacaoDeProdutos(ArrayList<Produto> relacaoDeProdutos) {
+        this.relacaoDeProdutos = relacaoDeProdutos;
     }
 
     /**
@@ -24,7 +24,7 @@ public class ProdutosColecao implements IProdutos {
      */
     @Override
     public void addProduto(Produto p) throws Exception {
-        listaDeProdutos.add(p);
+        relacaoDeProdutos.add(p);
     }
 
     /**
@@ -37,9 +37,9 @@ public class ProdutosColecao implements IProdutos {
      */
     @Override
     public Produto removeProduto(int codigo) throws Exception{
-        for (Produto produto : listaDeProdutos) {
+        for (Produto produto : relacaoDeProdutos) {
             if (produto.getCodigo() == codigo) {
-                listaDeProdutos.remove(produto);
+                relacaoDeProdutos.remove(produto);
             }
         }
         throw new IllegalArgumentException("Não encontrado!");
@@ -55,7 +55,7 @@ public class ProdutosColecao implements IProdutos {
 
     @Override
     public Produto getProduto(int codigo) throws Exception {
-        for (Produto produto : listaDeProdutos){
+        for (Produto produto : relacaoDeProdutos){
             if(codigo == produto.getCodigo()){
                 return produto;
             }
@@ -73,7 +73,7 @@ public class ProdutosColecao implements IProdutos {
      */
     @Override
     public void updateQuantidade(int codigo, double nova) throws Exception {
-        for (Produto produto : listaDeProdutos){
+        for (Produto produto : relacaoDeProdutos){
             if(codigo == produto.getCodigo()){
                 produto.receberQuantidade(nova);
             }
@@ -94,7 +94,7 @@ public class ProdutosColecao implements IProdutos {
      */
     @Override
     public void updatePreco(int codigo, double novo) throws Exception {
-        for (Produto produto : listaDeProdutos){
+        for (Produto produto : relacaoDeProdutos){
             if(codigo == produto.getCodigo()){
                 produto.setPreco(novo);
             }
@@ -113,7 +113,7 @@ public class ProdutosColecao implements IProdutos {
      */
     @Override
     public void addQuantidade(int codigo, double quantidade) throws Exception {
-        for (Produto produto : listaDeProdutos){
+        for (Produto produto : relacaoDeProdutos){
             if(codigo == produto.getCodigo()){
                 produto.adicionarQuantidade(quantidade);
             }
