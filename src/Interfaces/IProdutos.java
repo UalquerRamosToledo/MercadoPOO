@@ -22,7 +22,7 @@ public interface IProdutos {
      * @throws java.lang.Exception Lança exceção quando o produto não pode ser removido, por exemplo,
      *                             porque não existe produto cadastrado com o código informado.
      */
-    public abstract Produto removeProduto(int codigo) throws Exception;
+    public abstract void removeProduto(int codigo) throws Exception;
 
     /**
      * Captura o produto com o código informado.

@@ -42,7 +42,7 @@ public interface INotasFiscais {
      * @param item Item a ser adicionado.
      * @throws java.lang.Exception Lança exceção quando não existir nota fiscal com o código informado.
      */
-    public abstract void addItem(int codigo, Item item) throws Exception;
+    public abstract void addItem(int codigo, Produto item) throws Exception;
 
     /**
      * Remove um item da nota fiscal com o código informado.
@@ -51,5 +51,5 @@ public interface INotasFiscais {
      * @throws java.lang.Exception Lança exceção quando não existir nota fiscal com o código informado ou 
      * quando o Item informado não existir.
      */
-    public abstract void removeItem(int codigo, Item item) throws Exception;
+    public abstract void removeItem(int codigo, Produto item) throws Exception;
 }

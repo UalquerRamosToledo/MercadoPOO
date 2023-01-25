@@ -55,4 +55,11 @@ public class ProdutoQuilo extends Produto {
     public void setQuantidade(double quantidade) {
         this.quantidade = quantidade;
     }
+
+    @Override
+    public String toString() {
+        return "ProdutoQuilo{" +
+                "quantidade=" + quantidade +
+                '}';
+    }
 }

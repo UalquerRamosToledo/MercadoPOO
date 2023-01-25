@@ -8,7 +8,13 @@ public class main {
         RelacaoDeProdutos relacaoDeProdutos = new RelacaoDeProdutos();
 
         relacaoDeProdutos.addProduto(p1);
+        relacaoDeProdutos.addProduto(p2);
+        System.out.println(relacaoDeProdutos.getProduto(1).getNome());
+        //relacaoDeProdutos.removeProduto(1);
         System.out.printf(relacaoDeProdutos.toString());
+        relacaoDeProdutos.getProduto(1).adicionarQuantidade(20.00);
+        relacaoDeProdutos.getProduto(1).getNome();
+        relacaoDeProdutos.getProduto(1).getPreco();
 
     }
 }

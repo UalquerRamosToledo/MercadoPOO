@@ -5,7 +5,7 @@ import Interfaces.INotasFiscais;
 
 import java.util.ArrayList;
 
-public class zRelacaoDeNotasFiscais implements INotasFiscais {
+public class RelacaoDeNotasFiscais implements INotasFiscais {
     private ArrayList<NotaFiscal> relacaoDeNotasFiscais;
 
     public RelacaoDeNotasFiscais() {
@@ -102,7 +102,7 @@ public class zRelacaoDeNotasFiscais implements INotasFiscais {
     public void removeItem(int codigo, Produto produto) throws Exception {
         for(NotaFiscal notaFiscal : relacaoDeNotasFiscais){
             if (notaFiscal.getCodigo() == codigo){
-                notaFiscal.removerProdutoNF(produto);
+                notaFiscal.removerItemNF(produto);
             }
         }
     }
