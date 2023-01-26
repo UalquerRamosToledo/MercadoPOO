@@ -1,9 +1,6 @@
 package Colecoes;
-
 import Interfaces.IProdutos;
 import Fonte.Produto;
-
-import java.security.spec.ECField;
 import java.util.ArrayList;
 
 public class RelacaoDeProdutos implements IProdutos {
@@ -49,7 +46,7 @@ public class RelacaoDeProdutos implements IProdutos {
                 }
             }
         }catch (Exception e) {
-            System.out.println("Produto não removido");
+            System.out.println("Não foi possível remover o produto.");
         }
     }
     /**
@@ -68,7 +65,7 @@ public class RelacaoDeProdutos implements IProdutos {
                 return produto;
             }
         }
-        throw new IllegalArgumentException("Não encontrado!");
+        throw new IllegalArgumentException("Produto não encontrado!");
     }
 
     /**
