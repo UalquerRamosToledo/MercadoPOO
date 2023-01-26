@@ -2,17 +2,23 @@ package Fonte;
 // código, data e relação de itens, onde cada item é composto
 //por um produto e a quantidade vendida.
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 
 public class NotaFiscal {
     private int codigo;
-    private Calendar data;
+    private String data;
     private ArrayList<Produto> relacaoDeItens;
 
     public NotaFiscal(int codigo) {
         this.codigo = codigo;
         this.relacaoDeItens = new ArrayList<Produto>();
+        DateFormat formatoDaData = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        Date dataAtual = new Date();
+        this.data = formatoDaData.format(dataAtual);
     }
 
     public int getCodigo() {
@@ -51,6 +57,10 @@ public class NotaFiscal {
             }
         }
         throw new IllegalArgumentException("Código não encontrado!");
+    }
+
+    public String getData() {
+        return data;
     }
 
     @Override
