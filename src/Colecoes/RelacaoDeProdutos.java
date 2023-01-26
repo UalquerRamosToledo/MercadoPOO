@@ -102,13 +102,15 @@ public class RelacaoDeProdutos implements IProdutos {
      */
     @Override
     public void updatePreco(int codigo, double novo) throws Exception {
-        for (Produto produto : relacaoDeProdutos){
-            if(codigo == produto.getCodigo()){
-                produto.setPreco(novo);
+        try {
+            for (Produto produto : relacaoDeProdutos) {
+                if (codigo == produto.getCodigo()) {
+                    produto.setPreco(novo);
+                }
             }
+        }catch (Exception e) {
+            System.out.println("Não foi possível aterar o preço.");
         }
-        //perguntar como eu diferencio as execões para a professora
-        throw new IllegalArgumentException("Não foi possível alterar!");
     }
 
     /**
