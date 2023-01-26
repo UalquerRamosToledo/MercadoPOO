@@ -141,7 +141,11 @@ public class RelacaoDeProdutos implements IProdutos {
      */
     @Override
     public void subQuantidade(int codigo, double quantidade) throws Exception {
-
+        for (Produto p : relacaoDeProdutos){
+            if(p.getCodigo() == codigo){
+                p.subtrairQuantidade(quantidade);
+            }
+        }
     }
 
     @Override
