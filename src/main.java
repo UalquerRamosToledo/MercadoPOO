@@ -11,10 +11,12 @@ public class main {
         relacaoDeProdutos.addProduto(p2);
         System.out.println(relacaoDeProdutos.getProduto(1).getNome());
         //relacaoDeProdutos.removeProduto(1);
-        System.out.printf(relacaoDeProdutos.toString());
-        relacaoDeProdutos.getProduto(1).adicionarQuantidade(20.00);
+
+        System.out.println(p1.getQuantidade());
+        relacaoDeProdutos.updateQuantidade(1, 20.00);
         relacaoDeProdutos.getProduto(1).getNome();
         relacaoDeProdutos.getProduto(1).getPreco();
+        System.out.println(p1.getQuantidade());
 
     }
 }

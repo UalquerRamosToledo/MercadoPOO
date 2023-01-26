@@ -3,6 +3,7 @@ package Colecoes;
 import Interfaces.IProdutos;
 import Fonte.Produto;
 
+import java.security.spec.ECField;
 import java.util.ArrayList;
 
 public class RelacaoDeProdutos implements IProdutos {
@@ -80,15 +81,15 @@ public class RelacaoDeProdutos implements IProdutos {
      */
     @Override
     public void updateQuantidade(int codigo, double nova) throws Exception {
-        for (Produto produto : relacaoDeProdutos){
-            if(codigo == produto.getCodigo()){
-                produto.receberQuantidade(nova);
+        try {
+            for (Produto produto : relacaoDeProdutos) {
+                if (codigo == produto.getCodigo()) {
+                    produto.receberQuantidade(nova);
+                }
             }
+        }catch (Exception e){
+            System.out.println("Não foi possível aterar a quantidade.");
         }
-        //perguntar como eu diferencio as execões para a professora
-        throw new IllegalArgumentException("Não foi possível alterar!");
-
-
     }
 
     /**
@@ -120,12 +121,15 @@ public class RelacaoDeProdutos implements IProdutos {
      */
     @Override
     public void addQuantidade(int codigo, double quantidade) throws Exception {
-        for (Produto produto : relacaoDeProdutos){
-            if(codigo == produto.getCodigo()){
-                produto.adicionarQuantidade(quantidade);
+        try {
+            for (Produto produto : relacaoDeProdutos) {
+                if (codigo == produto.getCodigo()) {
+                    produto.adicionarQuantidade(quantidade);
+                }
             }
+        } catch (Exception e){
+            System.out.println("Não foi possível aterar a quantidade.");
         }
-        //perguntar como eu diferencio as execões para a professora
     }
 
     /**
