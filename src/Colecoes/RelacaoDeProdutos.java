@@ -84,10 +84,10 @@ public class RelacaoDeProdutos implements IProdutos {
         try {
             for (Produto produto : relacaoDeProdutos) {
                 if (codigo == produto.getCodigo()) {
-                    produto.receberQuantidade(nova);
+                    produto.adicionarQuantidade(nova);
                 }
             }
-        }catch (Exception e){
+        } catch (Exception e){
             System.out.println("Não foi possível aterar a quantidade.");
         }
     }
