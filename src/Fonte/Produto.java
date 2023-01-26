@@ -12,6 +12,9 @@ public abstract class Produto {
         this.descricao = descricao;
         this.preco = preco;
     }
+    public Produto(){
+
+    }
 
     /**
      * Vai retornar o código do produto

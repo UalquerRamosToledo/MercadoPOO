@@ -1,6 +1,9 @@
 import Colecoes.*;
 import Fonte.*;
 
+import javax.swing.plaf.synth.SynthOptionPaneUI;
+import java.sql.SQLOutput;
+
 public class main {
     public static void main(String args[]) throws Exception {
         ProdutoQuilo p1 = new ProdutoQuilo(1,"Banana", "Banana verde",5.00,50.00);
@@ -9,14 +12,22 @@ public class main {
 
         relacaoDeProdutos.addProduto(p1);
         relacaoDeProdutos.addProduto(p2);
-        System.out.println(relacaoDeProdutos.getProduto(1).getNome());
+        //System.out.println(relacaoDeProdutos.getProduto(1).getNome());
         //relacaoDeProdutos.removeProduto(1);
 
-        System.out.println(p1.getQuantidade());
+        //System.out.println(p1.getQuantidade());
         relacaoDeProdutos.updateQuantidade(1, 20.00);
         relacaoDeProdutos.getProduto(1).getNome();
         relacaoDeProdutos.getProduto(1).getPreco();
-        System.out.println(p1.getQuantidade());
+        //System.out.println(p1.getQuantidade());
+
+        NotaFiscal nf = new NotaFiscal(1);
+        nf.adicionarProduto(p1);
+        nf.adicionarProduto(p2);
+        nf.adicionarProduto(p1);
+        System.out.println(nf.toString());
+        System.out.println("Valor total da NF " + nf.valorTotalNF());
+
 
     }
 }
