@@ -84,7 +84,7 @@ public class RelacaoDeProdutos implements IProdutos {
         try {
             for (Produto produto : relacaoDeProdutos) {
                 if (codigo == produto.getCodigo()) {
-                    produto.adicionarQuantidade(nova);
+                    produto.setQuantidade(nova);
                 }
             }
         } catch (Exception e){

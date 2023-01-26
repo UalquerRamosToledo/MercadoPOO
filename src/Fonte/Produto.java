@@ -59,7 +59,7 @@ public abstract class Produto {
     public String getNome(){
         return this.nome;
     }
-
+    public abstract void setQuantidade(double nova) throws Exception;
     @Override
     public String toString() {
         return "Produto{" +
