@@ -48,7 +48,6 @@ public class MercadoFrame extends JFrame {
         adicionarNFOption = new JMenuItem("Adicionar Nota Fiscal");
         nfMenu.add(adicionarNFOption);
 
-        add(vendaMenu);
         setTitle("Mercado POO");
         setSize(1200, 800);
         setLocationRelativeTo(null);
