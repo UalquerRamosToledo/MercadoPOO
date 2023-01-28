@@ -32,22 +32,22 @@ public class MercadoFrame extends JFrame {
         menuBar.add(estoqueMenu);
         menuBar.add(nfMenu);
 
-
         // Cria as opções "PDV, exibir Todos" no menu "Venda"
         pdvOption = new JMenuItem("PDV");
-
         vendaMenu.add(pdvOption);
 
         //Cria as opões de "Adicionar Produto" no menu "Estoque"
         adicionarProdutoOption = new JMenuItem("Adicionar Produto");
-
         estoqueMenu.add(adicionarProdutoOption);
 
         //Cria as Opções de "Adicionar" no menu "Nota Fiscal"
-
         adicionarNFOption = new JMenuItem("Adicionar Nota Fiscal");
         nfMenu.add(adicionarNFOption);
 
+        vendaPanel = new JPanel();
+        adicionarListner();
+
+        add(vendaPanel, BorderLayout.CENTER);
         setTitle("Mercado POO");
         setSize(1200, 800);
         setLocationRelativeTo(null);
@@ -59,7 +59,19 @@ public class MercadoFrame extends JFrame {
         pdvOption.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                vendaPanel.removeAll();
+                vendaPanel.setBackground(Color.red);
+                JLabel a = new JLabel("Deu certo");
+                vendaPanel.add(a);
+                vendaPanel.setVisible(true);
+            }
+        });
+        adicionarNFOption.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                vendaPanel.removeAll();
+                vendaPanel.setBackground(Color.BLUE);
+                vendaPanel.setVisible(true);
             }
         });
     }
