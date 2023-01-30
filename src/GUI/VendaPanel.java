@@ -1,4 +1,4 @@
-package InterfacesGUI;
+package GUI;
 
 import Colecoes.RelacaoDeNotasFiscais;
 import Colecoes.RelacaoDeProdutos;
@@ -6,15 +6,16 @@ import Colecoes.RelacaoDeProdutos;
 import javax.swing.*;
 import java.awt.*;
 
-public class AdicionarProdutoPanel extends JPanel {
-    private RelacaoDeProdutos relacaoDeProdutos;
-    private RelacaoDeNotasFiscais relacaoDeNotasFiscais;
-    public AdicionarProdutoPanel(RelacaoDeProdutos relacaoDeProdutos, RelacaoDeNotasFiscais relacaoDeNotasFiscais) {
+public class VendaPanel extends JPanel {
+    RelacaoDeProdutos relacaoDeProdutos;
+    RelacaoDeNotasFiscais relacaoDeNotasFiscais;
+    GridBagConstraints constraints;
+    public VendaPanel(RelacaoDeProdutos relacaoDeProdutos, RelacaoDeNotasFiscais relacaoDeNotasFiscais){
         this.relacaoDeProdutos = relacaoDeProdutos;
         this.relacaoDeNotasFiscais = relacaoDeNotasFiscais;
         JPanel panel = new JPanel(new GridLayout(3, 2));
 
-        JLabel produtoLabel = new JLabel("Nome do Produto:");
+        JLabel produtoLabel = new JLabel("Código Produto:");
         JTextField produtoField = new JTextField();
 
         JLabel quantidadeLabel = new JLabel("Quantidade:");

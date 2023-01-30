@@ -1,6 +1,6 @@
 import Colecoes.*;
 import Fonte.*;
-import InterfacesGUI.MercadoFrame;
+import GUI.MercadoFrame;
 
 public class main {
     public static void main(String args[]) throws Exception {
