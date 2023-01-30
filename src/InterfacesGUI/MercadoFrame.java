@@ -10,12 +10,12 @@ import java.awt.event.ActionListener;
 import java.awt.event.ComponentListener;
 
 public class MercadoFrame extends JFrame {
+    GridBagConstraints constraints;
     RelacaoDeProdutos relacaoDeProdutos;
     RelacaoDeNotasFiscais relacaoDeNotasFiscais;
     JMenuBar menuBar;
     JMenu vendaMenu, estoqueMenu, nfMenu;
     JMenuItem pdvOption, adicionarProdutoOption, adicionarNFOption;
-    JPanel vendaPanel;
     public MercadoFrame(RelacaoDeProdutos relacaoDeProdutos, RelacaoDeNotasFiscais relacaoDeNotasFiscais){
         this.relacaoDeProdutos = relacaoDeProdutos;
         this.relacaoDeNotasFiscais = relacaoDeNotasFiscais;
@@ -44,35 +44,31 @@ public class MercadoFrame extends JFrame {
         adicionarNFOption = new JMenuItem("Adicionar Nota Fiscal");
         nfMenu.add(adicionarNFOption);
 
-        vendaPanel = new JPanel();
-        adicionarListner();
-
-        add(vendaPanel, BorderLayout.CENTER);
-        setTitle("Mercado POO");
-        setSize(1200, 800);
-        setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setLayout(new FlowLayout());
-        setVisible(true);
-    }
-    public void adicionarListner(){
         pdvOption.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                vendaPanel.removeAll();
-                vendaPanel.setBackground(Color.red);
-                JLabel a = new JLabel("Deu certo");
-                vendaPanel.add(a);
-                vendaPanel.setVisible(true);
+               VendaPanel vendaPanel = new VendaPanel(relacaoDeProdutos, relacaoDeNotasFiscais);
+               setContentPane(vendaPanel);
+               revalidate();
+               repaint();
+
             }
         });
         adicionarNFOption.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                vendaPanel.removeAll();
-                vendaPanel.setBackground(Color.BLUE);
-                vendaPanel.setVisible(true);
+                AdicionarProdutoPanel adicionarProdutoPanel = new AdicionarProdutoPanel(relacaoDeProdutos, relacaoDeNotasFiscais);
+                setContentPane(adicionarProdutoPanel);
+                revalidate();
+                repaint();
             }
         });
+
+        setTitle("Mercado POO");
+        setSize(1200, 800);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        //setLayout(new GridBagLayout());
+        setVisible(true);
     }
 }
