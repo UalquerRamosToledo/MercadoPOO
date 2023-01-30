@@ -42,7 +42,7 @@ public class MercadoFrame extends JFrame {
         adicionarProdutoOption = new JMenuItem("Adicionar Produto");
         estoqueMenu.add(adicionarProdutoOption);
 
-        exibirProdutosOption = new JMenuItem("Exibir todos");
+        exibirProdutosOption = new JMenuItem("Exibir Todos Produtos");
         estoqueMenu.add(exibirProdutosOption);
 
 
