@@ -13,6 +13,7 @@ public class AdicionarProdutoPanel extends JPanel {
         this.relacaoDeProdutos = relacaoDeProdutos;
         this.relacaoDeNotasFiscais = relacaoDeNotasFiscais;
         JPanel panel = new JPanel(new GridLayout(3, 2));
+        //int codigo, String nome, String descricao, double preco, double quantidade
 
         JLabel produtoLabel = new JLabel("Nome do Produto:");
         JTextField produtoField = new JTextField();
