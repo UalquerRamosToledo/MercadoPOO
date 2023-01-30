@@ -23,6 +23,7 @@ public class main {
         nf.adicionarProduto(p1);
         nf.adicionarProduto(p2);
         nf.adicionarProduto(p1);
+        nf.removerItemNF(p1);
         System.out.println(nf.toString());
         System.out.println("Valor total da NF " + nf.valorTotalNF());
         System.out.println(nf.getData());
