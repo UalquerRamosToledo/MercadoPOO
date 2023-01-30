@@ -14,7 +14,10 @@ public class MercadoFrame extends JFrame {
     RelacaoDeNotasFiscais relacaoDeNotasFiscais;
     JMenuBar menuBar;
     JMenu vendaMenu, estoqueMenu, nfMenu;
-    JMenuItem pdvOption, adicionarProdutoOption, adicionarNFOption, exibirNFOption;
+    JMenuItem pdvOption, adicionarProdutoOption, adicionarNFOption, exibirNFOption, exibirProdutosOption;
+    AdicionarProdutoPanel adicionarProdutoPanel;
+    ExibirNotasFiscaisPanel exibirNotasFiscaisPanel;
+
     public MercadoFrame(RelacaoDeProdutos relacaoDeProdutos, RelacaoDeNotasFiscais relacaoDeNotasFiscais){
         this.relacaoDeProdutos = relacaoDeProdutos;
         this.relacaoDeNotasFiscais = relacaoDeNotasFiscais;
@@ -39,6 +42,10 @@ public class MercadoFrame extends JFrame {
         adicionarProdutoOption = new JMenuItem("Adicionar Produto");
         estoqueMenu.add(adicionarProdutoOption);
 
+        exibirProdutosOption = new JMenuItem("Exibir todos");
+        estoqueMenu.add(exibirProdutosOption);
+
+
         //Cria as Opções de "Adicionar" no menu "Nota Fiscal"
         adicionarNFOption = new JMenuItem("Adicionar Nota Fiscal");
         nfMenu.add(adicionarNFOption);
@@ -59,8 +66,16 @@ public class MercadoFrame extends JFrame {
         adicionarProdutoOption.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                AdicionarProdutoPanel adicionarProdutoPanel = new AdicionarProdutoPanel(relacaoDeProdutos, relacaoDeNotasFiscais);
+                adicionarProdutoPanel  = new AdicionarProdutoPanel(relacaoDeProdutos, relacaoDeNotasFiscais);
                 setContentPane(adicionarProdutoPanel);
+                revalidate();
+                repaint();
+            }
+        });
+        exibirProdutosOption.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
                 revalidate();
                 repaint();
             }
@@ -68,7 +83,7 @@ public class MercadoFrame extends JFrame {
         exibirNFOption.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               ExibirNotasFiscaisPanel exibirNotasFiscaisPanel = new ExibirNotasFiscaisPanel(relacaoDeNotasFiscais, relacaoDeProdutos);
+                exibirNotasFiscaisPanel = new ExibirNotasFiscaisPanel(relacaoDeNotasFiscais, relacaoDeProdutos);
                 setContentPane(exibirNotasFiscaisPanel);
                 revalidate();
                 repaint();
