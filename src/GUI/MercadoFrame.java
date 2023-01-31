@@ -16,7 +16,6 @@ public class MercadoFrame extends JFrame {
     JMenu vendaMenu, estoqueMenu, nfMenu;
     JMenuItem pdvOption, adicionarProdutoOption, adicionarNFOption, exibirNFOption, exibirProdutosOption;
     AdicionarProdutoPanel adicionarProdutoPanel;
-    ExibirProdutosPanel exibirProdutosPanel;
     ExibirNotasFiscaisPanel exibirNotasFiscaisPanel;
 
     public MercadoFrame(RelacaoDeProdutos relacaoDeProdutos, RelacaoDeNotasFiscais relacaoDeNotasFiscais){
@@ -77,7 +76,7 @@ public class MercadoFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("clicou");
-                exibirProdutosPanel = new ExibirProdutosPanel(relacaoDeProdutos);
+                ExibirProdutosPanel exibirProdutosPanel = new ExibirProdutosPanel(relacaoDeProdutos);
                 revalidate();
                 repaint();
             }

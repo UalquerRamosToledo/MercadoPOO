@@ -2,34 +2,88 @@ package GUI;
 
 import Colecoes.RelacaoDeNotasFiscais;
 import Colecoes.RelacaoDeProdutos;
+import Fonte.Produto;
+import Fonte.ProdutoQuilo;
+import Fonte.ProdutoUnidade;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class AdicionarProdutoPanel extends JPanel {
     private RelacaoDeProdutos relacaoDeProdutos;
     private RelacaoDeNotasFiscais relacaoDeNotasFiscais;
+    private JComboBox comboBox;
+    private JButton salvarBTN;
+    String selecaoCombo;
+    Produto produto;
     public AdicionarProdutoPanel(RelacaoDeProdutos relacaoDeProdutos, RelacaoDeNotasFiscais relacaoDeNotasFiscais) {
         this.relacaoDeProdutos = relacaoDeProdutos;
         this.relacaoDeNotasFiscais = relacaoDeNotasFiscais;
-        JPanel panel = new JPanel(new GridLayout(3, 2));
-        //int codigo, String nome, String descricao, double preco, double quantidade
+        JPanel panel = new JPanel(new GridLayout(7, 2));
 
-        JLabel produtoLabel = new JLabel("Nome do Produto:");
-        JTextField produtoField = new JTextField();
+        JLabel nomeProdutoLabel = new JLabel("Nome do Produto  ");
+        JTextField nomeProdutoField = new JTextField();
 
-        JLabel quantidadeLabel = new JLabel("Quantidade:");
+        JLabel descricaoLabel = new JLabel("Descrição ");
+        JTextField descricaoField = new JTextField();
+
+        JLabel quantidadeLabel = new JLabel("Quantidade ");
         JTextField quantidadeField = new JTextField();
 
-        JLabel precoLabel = new JLabel("Preço:");
+        JLabel precoLabel = new JLabel("Preço ");
         JTextField precoField = new JTextField();
 
-        panel.add(produtoLabel);
-        panel.add(produtoField);
+        JLabel tipo = new JLabel("Tipo ");
+
+    String[] options = {"Selecione", "Unidade", "Quilo"};
+        comboBox = new JComboBox<>(options);
+
+        salvarBTN = new JButton("Salvar");
+
+        comboBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                selecaoCombo = (String) comboBox.getSelectedItem();
+            }
+        });
+
+        salvarBTN.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String nome = nomeProdutoField.getText();
+                String descricao = descricaoField.getText();
+                double quantidade = Double.parseDouble(quantidadeField.getText());
+                double preco = Double.parseDouble(precoField.getText());
+
+                try {
+                    if (selecaoCombo.equals("Unidade")){
+                        produto = new ProdutoUnidade(nome,descricao,preco,(int) quantidade);
+                        System.out.println("Adicionou por UNIDADE");
+                    }else if(selecaoCombo.equals("Quilo")) {
+                        produto = new ProdutoQuilo(nome, descricao, preco, quantidade);
+                        System.out.println("Adicionou por quilo");
+                    }
+                        relacaoDeProdutos.addProduto(produto);
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(null,"Selecione o tipo do produto.","Erro!", JOptionPane.INFORMATION_MESSAGE);;
+                }
+            }
+        });
+
+
+        panel.add(nomeProdutoLabel);
+        panel.add(nomeProdutoField);
+        panel.add(descricaoLabel);
+        panel.add(descricaoField);
         panel.add(quantidadeLabel);
         panel.add(quantidadeField);
         panel.add(precoLabel);
         panel.add(precoField);
+        panel.add(tipo);
+        panel.add(comboBox);
+        panel.add(salvarBTN);
         panel.setVisible(true);
         add(panel);
     }

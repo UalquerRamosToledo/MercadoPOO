@@ -1,14 +1,14 @@
 package Fonte;
 
 public abstract class Produto {
-    private static int count = 0;
+    private static int contadorGeral = 0;
     private int codigo;
     private String nome;
     private String descricao;
     private double preco;
 
     public Produto( String nome, String descricao, double preco) {
-        this.codigo = count ++;
+        this.codigo = contadorGeral ++;
         this.nome = nome;
         this.descricao = descricao;
         this.preco = preco;

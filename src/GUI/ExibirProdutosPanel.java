@@ -11,8 +11,8 @@ public class ExibirProdutosPanel extends JPanel{
     DefaultTableModel produtosTabel;
 
     public ExibirProdutosPanel(RelacaoDeProdutos relacaoDeProdutos){
+        JPanel panel = new JPanel(new GridLayout(3, 2));
         this.relacaoDeProdutos = relacaoDeProdutos;
-
         setBackground(Color.red);
         produtosTabel = new DefaultTableModel();
         produtosTabel.setColumnCount(5);
@@ -21,8 +21,6 @@ public class ExibirProdutosPanel extends JPanel{
         produtosTabel.addColumn("Descrição");
         produtosTabel.addColumn("Valor");
         produtosTabel.addColumn("Quantidade");
-
-
 
 
     }
