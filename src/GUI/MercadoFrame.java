@@ -14,7 +14,7 @@ public class MercadoFrame extends JFrame {
     RelacaoDeNotasFiscais relacaoDeNotasFiscais;
     JMenuBar menuBar;
     JMenu vendaMenu, estoqueMenu, nfMenu;
-    JMenuItem pdvOption, adicionarProdutoOption, adicionarNFOption, exibirNFOption, exibirProdutosOption;
+    JMenuItem pdvOption, adicionarProdutoOption, adicionarNFOption, exibirNFOption, exibirProdutosOption, removerProdutoOption;
     AdicionarProdutoPanel adicionarProdutoPanel;
     ExibirNotasFiscaisPanel exibirNotasFiscaisPanel;
 
@@ -42,6 +42,9 @@ public class MercadoFrame extends JFrame {
         adicionarProdutoOption = new JMenuItem("Adicionar Produto");
         estoqueMenu.add(adicionarProdutoOption);
 
+        removerProdutoOption = new JMenuItem("Remover Produto");
+        estoqueMenu.add(removerProdutoOption);
+
         exibirProdutosOption = new JMenuItem("Exibir Todos Produtos");
         estoqueMenu.add(exibirProdutosOption);
 
@@ -66,8 +69,17 @@ public class MercadoFrame extends JFrame {
         adicionarProdutoOption.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                adicionarProdutoPanel  = new AdicionarProdutoPanel(relacaoDeProdutos, relacaoDeNotasFiscais);
+                adicionarProdutoPanel  = new AdicionarProdutoPanel(relacaoDeProdutos);
                 setContentPane(adicionarProdutoPanel);
+                revalidate();
+                repaint();
+            }
+        });
+        removerProdutoOption.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                RemoverProdutoPanel removerProdutoPanel = new RemoverProdutoPanel(relacaoDeProdutos);
+                setContentPane(removerProdutoPanel);
                 revalidate();
                 repaint();
             }

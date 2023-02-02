@@ -39,15 +39,12 @@ public class RelacaoDeProdutos implements IProdutos {
      */
     @Override
     public void removeProduto(int codigo) throws Exception{
-        try{
             for (Produto produto : relacaoDeProdutos) {
                 if (produto.getCodigo() == codigo) {
                     relacaoDeProdutos.remove(produto);
                 }
             }
-        }catch (Exception e) {
-            System.out.println("Não foi possível remover o produto.");
-        }
+            throw new Exception("Não foi possível remover");
     }
     /**
      * Captura o produto com o código informado.

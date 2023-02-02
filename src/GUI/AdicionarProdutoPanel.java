@@ -13,14 +13,12 @@ import java.awt.event.ActionListener;
 
 public class AdicionarProdutoPanel extends JPanel {
     private RelacaoDeProdutos relacaoDeProdutos;
-    private RelacaoDeNotasFiscais relacaoDeNotasFiscais;
     private JComboBox comboBox;
     private JButton salvarBTN;
     String selecaoCombo;
     Produto produto;
-    public AdicionarProdutoPanel(RelacaoDeProdutos relacaoDeProdutos, RelacaoDeNotasFiscais relacaoDeNotasFiscais) {
+    public AdicionarProdutoPanel(RelacaoDeProdutos relacaoDeProdutos) {
         this.relacaoDeProdutos = relacaoDeProdutos;
-        this.relacaoDeNotasFiscais = relacaoDeNotasFiscais;
         JPanel panel = new JPanel(new GridLayout(7, 2));
 
         JLabel nomeProdutoLabel = new JLabel("Nome do Produto  ");
@@ -37,7 +35,7 @@ public class AdicionarProdutoPanel extends JPanel {
 
         JLabel tipo = new JLabel("Tipo ");
 
-    String[] options = {"Selecione", "Unidade", "Quilo"};
+        String[] options = {"Selecione", "Unidade", "Quilo"};
         comboBox = new JComboBox<>(options);
 
         salvarBTN = new JButton("Salvar");
@@ -60,14 +58,12 @@ public class AdicionarProdutoPanel extends JPanel {
                 try {
                     if (selecaoCombo.equals("Unidade")){
                         produto = new ProdutoUnidade(nome,descricao,preco,(int) quantidade);
-                        System.out.println("Adicionou por UNIDADE");
                     }else if(selecaoCombo.equals("Quilo")) {
                         produto = new ProdutoQuilo(nome, descricao, preco, quantidade);
-                        System.out.println("Adicionou por quilo");
                     }
                         relacaoDeProdutos.addProduto(produto);
                 } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null,"Selecione o tipo do produto.","Erro!", JOptionPane.INFORMATION_MESSAGE);;
+                    JOptionPane.showMessageDialog(null,"Selecione o tipo do produto.","Erro!", JOptionPane.INFORMATION_MESSAGE);
                 }
             }
         });
