@@ -145,10 +145,16 @@ public class RelacaoDeProdutos implements IProdutos {
         }
     }
 
+    public int getSize(){
+        return this.relacaoDeProdutos.size();
+    }
+
     @Override
     public String toString() {
-        return "RelacaoDeProdutos{" +
-                "relacaoDeProdutos=" + relacaoDeProdutos +
-                '}';
+        String lista = "";
+        for(int i = 0; i < relacaoDeProdutos.size(); i++){
+            lista += relacaoDeProdutos.get(i).toString();
+        }
+        return lista;
     }
 }

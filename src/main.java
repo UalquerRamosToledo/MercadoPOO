@@ -4,13 +4,13 @@ import GUI.MercadoFrame;
 
 public class main {
     public static void main(String args[]) throws Exception {
-        /**ProdutoQuilo p1 = new ProdutoQuilo(1,"Banana", "Banana verde",5.00,50.00);
-        ProdutoUnidade p2 = new ProdutoUnidade(2, "Arroz 2Kg", "Arroz lavado", 7.00,20);
+        ProdutoQuilo p1 = new ProdutoQuilo("Banana", "Banana verde",50,50);
+        ProdutoUnidade p2 = new ProdutoUnidade("Arroz 2Kg", "Arroz lavado", 9,20);
         RelacaoDeProdutos relacaoDeProdutos = new RelacaoDeProdutos();
         RelacaoDeNotasFiscais relacaoDeNotasFiscais = new RelacaoDeNotasFiscais();
         relacaoDeProdutos.addProduto(p1);
         relacaoDeProdutos.addProduto(p2);
-        //System.out.println(relacaoDeProdutos.getProduto(1).getNome());
+        /*System.out.println(relacaoDeProdutos.getProduto(1).getNome());
         //relacaoDeProdutos.removeProduto(1);
 
         //System.out.println(p1.getQuantidade());
@@ -26,10 +26,10 @@ public class main {
         nf.removerItemNF(p1);
         System.out.println(nf.toString());
         System.out.println("Valor total da NF " + nf.valorTotalNF());
-        System.out.println(nf.getData());
-         **/
-        RelacaoDeProdutos relacaoDeProdutos = new RelacaoDeProdutos();
-        RelacaoDeNotasFiscais relacaoDeNotasFiscais = new RelacaoDeNotasFiscais();
+        System.out.println(nf.getData());*/
+
         MercadoFrame mercadoFrame = new MercadoFrame(relacaoDeProdutos, relacaoDeNotasFiscais);
+        System.out.println(relacaoDeProdutos.toString());
+        System.out.println(relacaoDeProdutos.getSize());
     }
 }

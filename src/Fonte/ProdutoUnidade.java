@@ -57,10 +57,8 @@ public class ProdutoUnidade extends Produto{
         throw new IllegalArgumentException("Não foi possível alterar! O número informado é inválido!");
     }
 
-    @Override
-    public String toString() {
-        return "ProdutoUnidade{" +
-                "quantidade=" + quantidade +
-                '}';
-    }
+   // @Override
+   public String toString() {
+       return "Cód " + getCodigo() + "  |  Nome " + getNome() + "  |  Descrição " + getDescricao() + "  |  Preço " + getPreco() + "  |  Quantidade " + quantidade + " Un \n";
+   }
 }
