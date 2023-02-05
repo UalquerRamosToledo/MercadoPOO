@@ -14,11 +14,12 @@ public class MercadoFrame extends JFrame {
     RelacaoDeNotasFiscais relacaoDeNotasFiscais;
     JMenuBar menuBar;
     JMenu vendaMenu, estoqueMenu, nfMenu;
-    JMenuItem pdvOption, adicionarProdutoOption, atualizarPrecoProdutoOpition, notaFiscalOption, exibirProdutosOption, removerProdutoOption;
+    JMenuItem pdvOption, adicionarProdutoOption, atualizarPrecoProdutoOpition, atualizarQuantidadeProdutoOption, notaFiscalOption, exibirProdutosOption, removerProdutoOption;
 
     /*Classes*/
     AdicionarProdutoPanel adicionarProdutoPanel;
     AtualizarPrecoProdutoPanel atualizarPrecoPanel;
+    AtualizarQuantidadeProdutoPanel atualizarQuantidadeProdutoPanel;
 
     public MercadoFrame(RelacaoDeProdutos relacaoDeProdutos, RelacaoDeNotasFiscais relacaoDeNotasFiscais){
         this.relacaoDeProdutos = relacaoDeProdutos;
@@ -46,6 +47,8 @@ public class MercadoFrame extends JFrame {
         estoqueMenu.add(adicionarProdutoOption);
         atualizarPrecoProdutoOpition = new JMenuItem("Atualizar Preço");
         estoqueMenu.add(atualizarPrecoProdutoOpition);
+        atualizarQuantidadeProdutoOption = new JMenuItem("Atualizar Quantidade");
+        estoqueMenu.add(atualizarQuantidadeProdutoOption);
         removerProdutoOption = new JMenuItem("Remover Produto");
         estoqueMenu.add(removerProdutoOption);
         exibirProdutosOption = new JMenuItem("Exibir Todos Produtos");
@@ -88,6 +91,17 @@ public class MercadoFrame extends JFrame {
                 repaint();
             }
         });
+
+        atualizarQuantidadeProdutoOption.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                atualizarQuantidadeProdutoPanel = new AtualizarQuantidadeProdutoPanel(relacaoDeProdutos);
+                setContentPane(atualizarQuantidadeProdutoPanel);
+                revalidate();
+                repaint();
+            }
+        });
+
         removerProdutoOption.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
