@@ -24,8 +24,9 @@ public class RemoverProdutoPanel extends JPanel {
         removerBTN.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                int codigo = Integer.parseInt(idField.getText());
                 try {
-                    int codigo = Integer.parseInt(idField.getText());
+                    JOptionPane.showMessageDialog(null, relacaoDeProdutos.getProduto(codigo) , "Produto Removido", JOptionPane.INFORMATION_MESSAGE);
                     relacaoDeProdutos.removeProduto(codigo);
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null,"Código inválido!","Erro!", JOptionPane.INFORMATION_MESSAGE);

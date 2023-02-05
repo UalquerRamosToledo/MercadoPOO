@@ -38,13 +38,17 @@ public class RelacaoDeProdutos implements IProdutos {
      *                   porque não existe produto cadastrado com o código informado.
      */
     @Override
-    public void removeProduto(int codigo) throws Exception{
+    public void removeProduto(int codigo) throws Exception {
+        try {
             for (Produto produto : relacaoDeProdutos) {
                 if (produto.getCodigo() == codigo) {
                     relacaoDeProdutos.remove(produto);
                 }
             }
-            throw new Exception("Não foi possível remover");
+        }catch (Exception e){
+            e.getMessage();
+        }
+
     }
     /**
      * Captura o produto com o código informado.

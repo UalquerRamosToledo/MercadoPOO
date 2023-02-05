@@ -10,6 +10,7 @@ public class ExibirNotasFiscaisPanel extends JPanel{
 
     public ExibirNotasFiscaisPanel(RelacaoDeNotasFiscais relacaoDeNotasFiscais, RelacaoDeProdutos relacaoDeProdutos){
         this.setBackground(Color.red);
+        setVisible(true);
 
 
     }

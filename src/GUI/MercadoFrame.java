@@ -87,7 +87,6 @@ public class MercadoFrame extends JFrame {
         exibirProdutosOption.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("clicou");
                 ExibirProdutosPanel exibirProdutosPanel = new ExibirProdutosPanel(relacaoDeProdutos);
                 revalidate();
                 repaint();
@@ -96,7 +95,7 @@ public class MercadoFrame extends JFrame {
         exibirNFOption.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                exibirNotasFiscaisPanel = new ExibirNotasFiscaisPanel(relacaoDeNotasFiscais, relacaoDeProdutos);
+                ExibirNotasFiscaisPanel exibirNotasFiscaisPanel = new ExibirNotasFiscaisPanel(relacaoDeNotasFiscais, relacaoDeProdutos);
                 setContentPane(exibirNotasFiscaisPanel);
                 revalidate();
                 repaint();
