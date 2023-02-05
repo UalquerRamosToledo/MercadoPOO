@@ -29,17 +29,21 @@ public class AtualizarPrecoProdutoPanel extends JPanel {
         atualizarBTN.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int codigo = Integer.parseInt(idField.getText());
-                double novo = Double.parseDouble(precoField.getText());
+
                 try {
+                    int codigo = Integer.parseInt(idField.getText());
+                    double novo = Double.parseDouble(precoField.getText());
                     relacaoDeProdutos.updatePreco(codigo, novo);
+                    JOptionPane.showMessageDialog(null, "Alterado!", "Sucesso!", JOptionPane.INFORMATION_MESSAGE);
                 } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, ex.getMessage(), "Erro!", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Valores inválidos!", "Erro!", JOptionPane.INFORMATION_MESSAGE);
                 }
             }
         });
         panel.add(idLabel);
         panel.add(idField);
+        panel.add(precoLabel);
+        panel.add(precoField);
         panel.add(atualizarBTN);
         panel.setVisible(true);
 

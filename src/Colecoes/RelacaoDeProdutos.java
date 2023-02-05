@@ -75,15 +75,12 @@ public class RelacaoDeProdutos implements IProdutos {
      */
     @Override
     public void updateQuantidade(int codigo, double nova) throws Exception {
-        try {
-            for (Produto produto : relacaoDeProdutos) {
-                if (codigo == produto.getCodigo()) {
-                    produto.setQuantidade(nova);
-                }
+        for (Produto produto : relacaoDeProdutos) {
+            if (codigo == produto.getCodigo()) {
+                produto.setQuantidade(nova);
             }
-        } catch (Exception e){
-            System.out.println("Não foi possível aterar a quantidade.");
         }
+        throw new Exception();
     }
 
     /**
