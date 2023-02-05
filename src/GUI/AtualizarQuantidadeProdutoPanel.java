@@ -21,7 +21,7 @@ public class AtualizarQuantidadeProdutoPanel extends JPanel{
         codigoProdutoField = new JTextField();
         buscarProdutoBtn = new JButton("Buscar");
         descricaoProdutoLabel = new JLabel("");
-        atualizarQuantidadeLabel = new JLabel("Dite a nova quantidade: ");
+        atualizarQuantidadeLabel = new JLabel("Digite a nova quantidade: ");
         quantidadeField = new JTextField();
         atualizarQuantidadeBtn = new JButton("Atualizar");
 
