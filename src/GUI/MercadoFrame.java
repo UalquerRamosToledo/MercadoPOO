@@ -13,8 +13,8 @@ public class MercadoFrame extends JFrame {
     RelacaoDeProdutos relacaoDeProdutos;
     RelacaoDeNotasFiscais relacaoDeNotasFiscais;
     JMenuBar menuBar;
-    JMenu vendaMenu, estoqueMenu, nfMenu;
-    JMenuItem pdvOption, adicionarProdutoOption, adicionarNFOption, notaFiscalOption, exibirProdutosOption, removerProdutoOption;
+    JMenu vendaMenu, estoqueMenu;
+    JMenuItem pdvOption, adicionarProdutoOption, editarProdutoOpition, notaFiscalOption, exibirProdutosOption, removerProdutoOption;
 
     /*Classes*/
     AdicionarProdutoPanel adicionarProdutoPanel;
@@ -44,6 +44,8 @@ public class MercadoFrame extends JFrame {
         //Cria as opões de "Adicionar Produto" no menu "Estoque"
         adicionarProdutoOption = new JMenuItem("Adicionar Produto");
         estoqueMenu.add(adicionarProdutoOption);
+        editarProdutoOpition = new JMenuItem("Editar Produto");
+        estoqueMenu.add(editarProdutoOpition);
         removerProdutoOption = new JMenuItem("Remover Produto");
         estoqueMenu.add(removerProdutoOption);
         exibirProdutosOption = new JMenuItem("Exibir Todos Produtos");
