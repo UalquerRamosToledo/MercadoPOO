@@ -29,7 +29,7 @@ public class RemoverProdutoPanel extends JPanel {
                     JOptionPane.showMessageDialog(null, relacaoDeProdutos.getProduto(codigo) , "Produto Removido", JOptionPane.INFORMATION_MESSAGE);
                     relacaoDeProdutos.removeProduto(codigo);
                 } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null,"Código inválido!","Erro!", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null,ex.getMessage(),"Erro!", JOptionPane.INFORMATION_MESSAGE);
                 }
             }
         });

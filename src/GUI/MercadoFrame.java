@@ -43,10 +43,8 @@ public class MercadoFrame extends JFrame {
         //Cria as opões de "Adicionar Produto" no menu "Estoque"
         adicionarProdutoOption = new JMenuItem("Adicionar Produto");
         estoqueMenu.add(adicionarProdutoOption);
-
         removerProdutoOption = new JMenuItem("Remover Produto");
         estoqueMenu.add(removerProdutoOption);
-
         exibirProdutosOption = new JMenuItem("Exibir Todos Produtos");
         estoqueMenu.add(exibirProdutosOption);
 

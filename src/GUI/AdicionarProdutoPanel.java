@@ -60,6 +60,7 @@ public class AdicionarProdutoPanel extends JPanel {
                         produto = new ProdutoUnidade(nome,descricao,preco,(int) quantidade);
                     }else if(selecaoCombo.equals("Quilo")) {
                         produto = new ProdutoQuilo(nome, descricao, preco, quantidade);
+                        JOptionPane.showMessageDialog(null,"Produto adicionado.","Sucesso!", JOptionPane.INFORMATION_MESSAGE);
                     }
                         relacaoDeProdutos.addProduto(produto);
                 } catch (Exception ex) {
