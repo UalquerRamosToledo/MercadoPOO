@@ -10,13 +10,14 @@ import java.util.Date;
 
 public class NotaFiscal {
     private int codigo;
+    private static int contadorGeral = 0;
     private String data;
     private ArrayList<Produto> relacaoDeItens;
 
-    public NotaFiscal(int codigo) {
-        this.codigo = codigo;
+    public NotaFiscal() {
+        this.codigo = contadorGeral ++;
         this.relacaoDeItens = new ArrayList<Produto>();
-        DateFormat formatoDaData = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        DateFormat formatoDaData = new SimpleDateFormat("dd/MM/yyyy");
         Date dataAtual = new Date();
         this.data = formatoDaData.format(dataAtual);
     }
