@@ -29,7 +29,7 @@ public class main {
         System.out.println(nf.getData());*/
 
         MercadoFrame mercadoFrame = new MercadoFrame(relacaoDeProdutos, relacaoDeNotasFiscais);
-        System.out.println(relacaoDeProdutos.toString());
+        System.out.println(relacaoDeProdutos);
         System.out.println(relacaoDeProdutos.getSize());
     }
 }

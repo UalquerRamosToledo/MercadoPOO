@@ -15,6 +15,8 @@ public class MercadoFrame extends JFrame {
     JMenuBar menuBar;
     JMenu vendaMenu, estoqueMenu, nfMenu;
     JMenuItem pdvOption, adicionarProdutoOption, adicionarNFOption, exibirNFOption, exibirProdutosOption, removerProdutoOption;
+
+    /*Classes*/
     AdicionarProdutoPanel adicionarProdutoPanel;
     ExibirNotasFiscaisPanel exibirNotasFiscaisPanel;
 
@@ -99,6 +101,7 @@ public class MercadoFrame extends JFrame {
                 setContentPane(exibirNotasFiscaisPanel);
                 revalidate();
                 repaint();
+                System.out.println("click");
             }
         });
 
