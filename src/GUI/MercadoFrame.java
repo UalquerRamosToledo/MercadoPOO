@@ -13,12 +13,12 @@ public class MercadoFrame extends JFrame {
     RelacaoDeProdutos relacaoDeProdutos;
     RelacaoDeNotasFiscais relacaoDeNotasFiscais;
     JMenuBar menuBar;
-    JMenu vendaMenu, estoqueMenu;
-    JMenuItem pdvOption, adicionarProdutoOption, editarProdutoOpition, notaFiscalOption, exibirProdutosOption, removerProdutoOption;
+    JMenu vendaMenu, estoqueMenu, nfMenu;
+    JMenuItem pdvOption, adicionarProdutoOption, atualizarPrecoProdutoOpition, notaFiscalOption, exibirProdutosOption, removerProdutoOption;
 
     /*Classes*/
     AdicionarProdutoPanel adicionarProdutoPanel;
-    ExibirNotasFiscaisPanel exibirNotasFiscaisPanel;
+    AtualizarPrecoProdutoPanel atualizarPrecoPanel;
 
     public MercadoFrame(RelacaoDeProdutos relacaoDeProdutos, RelacaoDeNotasFiscais relacaoDeNotasFiscais){
         this.relacaoDeProdutos = relacaoDeProdutos;
@@ -44,8 +44,8 @@ public class MercadoFrame extends JFrame {
         //Cria as opões de "Adicionar Produto" no menu "Estoque"
         adicionarProdutoOption = new JMenuItem("Adicionar Produto");
         estoqueMenu.add(adicionarProdutoOption);
-        editarProdutoOpition = new JMenuItem("Editar Produto");
-        estoqueMenu.add(editarProdutoOpition);
+        atualizarPrecoProdutoOpition = new JMenuItem("Atualizar Preço");
+        estoqueMenu.add(atualizarPrecoProdutoOpition);
         removerProdutoOption = new JMenuItem("Remover Produto");
         estoqueMenu.add(removerProdutoOption);
         exibirProdutosOption = new JMenuItem("Exibir Todos Produtos");
@@ -75,6 +75,15 @@ public class MercadoFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 adicionarProdutoPanel  = new AdicionarProdutoPanel(relacaoDeProdutos);
                 setContentPane(adicionarProdutoPanel);
+                revalidate();
+                repaint();
+            }
+        });
+        atualizarPrecoProdutoOpition.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                atualizarPrecoPanel = new AtualizarPrecoProdutoPanel(relacaoDeProdutos);
+                setContentPane(atualizarPrecoPanel);
                 revalidate();
                 repaint();
             }
