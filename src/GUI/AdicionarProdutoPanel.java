@@ -69,7 +69,7 @@ public class AdicionarProdutoPanel extends JPanel {
                     }
                         relacaoDeProdutos.addProduto(produto);
                 } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null,"Selecione o tipo do produto.","Erro!", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null,"Não foi possível adicionar o Produto. Preencha os campos corretamente!","Erro!", JOptionPane.INFORMATION_MESSAGE);
                 }
             }
         });

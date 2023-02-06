@@ -69,8 +69,8 @@ public class VendaPanel extends JPanel {
             @Override
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-                    int codigo = Integer.parseInt(codProdutoField.getText());
                     try {
+                        int codigo = Integer.parseInt(codProdutoField.getText());
                         relacaoDeProdutos.getProduto(codigo);
                         nomeField.setText(relacaoDeProdutos.getProduto(codigo).getNome());
                         descricaoField.setText(relacaoDeProdutos.getProduto(codigo).getDescricao());

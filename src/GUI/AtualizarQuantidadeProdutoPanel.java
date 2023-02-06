@@ -34,8 +34,8 @@ public class AtualizarQuantidadeProdutoPanel extends JPanel{
         buscarProdutoBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int codigo = Integer.parseInt(codigoProdutoField.getText());
                 try {
+                    int codigo = Integer.parseInt(codigoProdutoField.getText());
                     String produtoCompleto = relacaoDeProdutos.getProduto(codigo).toString();
                     descricaoProdutoLabel.setText(produtoCompleto);
 
@@ -47,9 +47,9 @@ public class AtualizarQuantidadeProdutoPanel extends JPanel{
         atualizarQuantidadeBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int codigo = Integer.parseInt(codigoProdutoField.getText());
-                int quantidade = Integer.parseInt(quantidadeField.getText());
                 try {
+                    int codigo = Integer.parseInt(codigoProdutoField.getText());
+                    int quantidade = Integer.parseInt(quantidadeField.getText());
                     relacaoDeProdutos.updateQuantidade(codigo, (int) quantidade);
                     JOptionPane.showMessageDialog(null,relacaoDeProdutos.getProduto(codigo),"Quantidade atualizada! ", JOptionPane.INFORMATION_MESSAGE);
                 } catch (Exception ex) {
