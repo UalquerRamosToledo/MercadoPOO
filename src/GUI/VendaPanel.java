@@ -112,9 +112,12 @@ public class VendaPanel extends JPanel {
         finalizarVendaBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            relacaoDeNotasFiscais.addNotaFiscal(notaFiscal);
-            JOptionPane.showMessageDialog(null,"Nota fiscal adicionada.","Venda finalizada!", JOptionPane.INFORMATION_MESSAGE);
-
+                try {
+                    relacaoDeNotasFiscais.addNotaFiscal(notaFiscal);
+                    JOptionPane.showMessageDialog(null, "Nota fiscal adicionada.", "Venda finalizada!", JOptionPane.INFORMATION_MESSAGE);
+                }catch (Exception ex){
+                    JOptionPane.showMessageDialog(null,"Não foi possível finalizar a venda.","Erro !", JOptionPane.INFORMATION_MESSAGE);
+                }
             }
         });
 
