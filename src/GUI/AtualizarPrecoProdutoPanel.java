@@ -15,44 +15,57 @@ import java.awt.event.ActionListener;
 
 public class AtualizarPrecoProdutoPanel extends JPanel {
     private RelacaoDeProdutos relacaoDeProdutos;
-    private JLabel idLabel, precoLabel;
-    private JTextField idField, precoField;
-    JButton atualizarBTN;
+    private JLabel buscarProdutoLabel, descricaoProdutoLabel, atualizarQuantidadeLabel;
+    private JTextField codigoProdutoField, precoField;
+    JButton buscarProdutoBtn, atualizarPrecoBTN;
 
     public AtualizarPrecoProdutoPanel(RelacaoDeProdutos relacaoDeProdutos) {
 
         this.relacaoDeProdutos = relacaoDeProdutos;
-        JPanel panel = new JPanel(new GridLayout(7, 2));
+        JPanel panel = new JPanel(new GridLayout(7, 1));
 
-        idLabel = new JLabel("Digita o Código do Produto:");
-        idField = new JTextField();
-
-        precoLabel = new JLabel("Novo Preço:");
+        buscarProdutoLabel = new JLabel("Digite o código do produto: ");
+        codigoProdutoField = new JTextField();
+        buscarProdutoBtn = new JButton("Buscar");
+        descricaoProdutoLabel = new JLabel("");
+        atualizarQuantidadeLabel = new JLabel("Digite o novo Preço: ");
         precoField = new JTextField();
+        atualizarPrecoBTN = new JButton("Atualizar");
 
-        atualizarBTN = new JButton("Atualizar Preço");
-
-        atualizarBTN.addActionListener(new ActionListener() {
+        buscarProdutoBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                int codigo = Integer.parseInt(codigoProdutoField.getText());
                 try {
-                    int codigo = Integer.parseInt(idField.getText());
-                    double novo = Double.parseDouble(precoField.getText());
-                    relacaoDeProdutos.updatePreco(codigo, novo);
-                    JOptionPane.showMessageDialog(null, "Alterado!", "Sucesso!", JOptionPane.INFORMATION_MESSAGE);
+                    String produtoCompleto = relacaoDeProdutos.getProduto(codigo).toString();
+                    descricaoProdutoLabel.setText(produtoCompleto);
+
                 } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, "Valores inválidos!", "Erro!", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null,"Produto não encontrado.","Erro!", JOptionPane.INFORMATION_MESSAGE);
                 }
             }
         });
-        panel.add(idLabel);
-        panel.add(idField);
-        panel.add(precoLabel);
+        atualizarPrecoBTN.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int codigo = Integer.parseInt(codigoProdutoField.getText());
+                double preco = Double.parseDouble(precoField.getText());
+                try {
+                    relacaoDeProdutos.updatePreco(codigo, preco);
+                    JOptionPane.showMessageDialog(null,relacaoDeProdutos.getProduto(codigo),"Quantidade atualizada! ", JOptionPane.INFORMATION_MESSAGE);
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(null,"Preço não atualizado.","Erro!", JOptionPane.INFORMATION_MESSAGE);
+                }
+            }
+        });
+        panel.add(buscarProdutoLabel);
+        panel.add(codigoProdutoField);
+        panel.add(buscarProdutoBtn);
+        panel.add(descricaoProdutoLabel);
+        panel.add(atualizarQuantidadeLabel);
         panel.add(precoField);
-        panel.add(atualizarBTN);
+        panel.add(atualizarPrecoBTN);
         panel.setVisible(true);
-
         add(panel);
     }
 }

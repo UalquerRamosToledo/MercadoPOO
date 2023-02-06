@@ -56,12 +56,11 @@ public class AdicionarProdutoPanel extends JPanel {
         salvarBTN.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String nome = nomeProdutoField.getText();
-                String descricao = descricaoField.getText();
-                double quantidade = Double.parseDouble(quantidadeField.getText());
-                double preco = Double.parseDouble(precoField.getText());
-
                 try {
+                    String nome = nomeProdutoField.getText();
+                    String descricao = descricaoField.getText();
+                    double quantidade = Double.parseDouble(quantidadeField.getText());
+                    double preco = Double.parseDouble(precoField.getText());
                     if (selecaoCombo.equals("Unidade")){
                         produto = new ProdutoUnidade(nome,descricao,preco,(int) quantidade);
                     }else if(selecaoCombo.equals("Quilo")) {
