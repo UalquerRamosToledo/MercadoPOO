@@ -40,8 +40,8 @@ public class NotaFiscalPanel extends JPanel {
         buscarNFBTN.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int codigo = Integer.parseInt(buscarNFField.getText());
                 try {
+                    int codigo = Integer.parseInt(buscarNFField.getText());
                     JOptionPane.showMessageDialog(null,relacaoDeNotasFiscais.getNotaFiscal(codigo).toString(),"Total!", JOptionPane.INFORMATION_MESSAGE);
                     } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null,"Não encontrada!","Erro!", JOptionPane.INFORMATION_MESSAGE);
