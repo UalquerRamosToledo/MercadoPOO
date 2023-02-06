@@ -44,7 +44,7 @@ public class NotaFiscalPanel extends JPanel {
                     int codigo = Integer.parseInt(buscarNFField.getText());
                     JOptionPane.showMessageDialog(null,relacaoDeNotasFiscais.getNotaFiscal(codigo).toString(),"Total!", JOptionPane.INFORMATION_MESSAGE);
                     } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null,"Não encontrada!","Erro!", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null,"Código inválido!","Erro!", JOptionPane.INFORMATION_MESSAGE);
                 }
             }
         });
