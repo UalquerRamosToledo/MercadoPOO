@@ -10,8 +10,6 @@ import java.awt.*;
  * @author Deivid, Ualquer
  * @version 1.0
  */
-
-
 public class ExibirProdutosPanel extends JPanel{
     RelacaoDeProdutos relacaoDeProdutos;
 
@@ -24,7 +22,5 @@ public class ExibirProdutosPanel extends JPanel{
         textArea.setWrapStyleWord(true);
         scrollPane.setPreferredSize(new Dimension(700, 500));
         JOptionPane.showMessageDialog(null, scrollPane, "Lista de Produtos", JOptionPane.INFORMATION_MESSAGE);
-
-
     }
 }
