@@ -4,7 +4,12 @@ import Fonte.*;
 import Interfaces.INotasFiscais;
 
 import java.util.ArrayList;
-
+/**
+ * Esta é a classe para armazenar e tratar um arraylist de Notas Fiscais.
+ *
+ * @author Deivid, Ualquer
+ * @version 1.0
+ */
 public class RelacaoDeNotasFiscais implements INotasFiscais {
     private ArrayList<NotaFiscal> relacaoDeNotasFiscais;
 

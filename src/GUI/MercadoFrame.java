@@ -7,7 +7,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+/**
+ * Esta é a classe para a Interface Grafica para genenciar todas as funcionalidades da aplicação.
+ *
+ * @author Deivid, Ualquer
+ * @version 1.0
+ */
 public class MercadoFrame extends JFrame {
     GridBagConstraints constraints;
     RelacaoDeProdutos relacaoDeProdutos;

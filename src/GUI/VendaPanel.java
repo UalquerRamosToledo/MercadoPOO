@@ -11,6 +11,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+/**
+ * Esta é a classe para a Interface Grafica para Exibir o Ponto de Venda.
+ *
+ * @author Deivid, Ualquer
+ * @version 1.0
+ */
 
 public class VendaPanel extends JPanel {
     RelacaoDeProdutos relacaoDeProdutos;

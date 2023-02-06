@@ -1,4 +1,10 @@
 package Fonte;
+/**
+ * Esta é a Classe Mãe de ProdutoQuilo e ProdutoUnidade.
+ *
+ * @author Deivid, Ualquer
+ * @version 1.0
+ */
 
 public abstract class Produto {
     private static int contadorGeral = 0;

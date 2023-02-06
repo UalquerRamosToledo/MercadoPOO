@@ -1,5 +1,10 @@
 package Fonte;
-
+/**
+ * Esta é a classe filha de Produto.
+ *
+ * @author Deivid, Ualquer
+ * @version 1.0
+ */
 public class ProdutoQuilo extends Produto {
     private double quantidade;
 

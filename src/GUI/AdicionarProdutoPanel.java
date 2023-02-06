@@ -10,6 +10,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+/**
+ * Esta é a classe para a Interface Grafica de Adicionar um Produto.
+ *
+ * @author Deivid, Ualquer
+ * @version 1.0
+ */
 
 public class AdicionarProdutoPanel extends JPanel {
     private RelacaoDeProdutos relacaoDeProdutos;

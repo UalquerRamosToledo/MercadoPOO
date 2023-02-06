@@ -7,6 +7,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+/**
+ * Esta é a classe para a Interface Grafica de gerenciar Notas Fiscais.
+ *
+ * @author Deivid, Ualquer
+ * @version 1.0
+ */
 
 public class NotaFiscalPanel extends JPanel {
     JPanel panel;

@@ -4,6 +4,12 @@ import Colecoes.RelacaoDeProdutos;
 
 import javax.swing.*;
 import java.awt.*;
+/**
+ * Esta é a classe para a Interface Grafica para Exibir os Produtos.
+ *
+ * @author Deivid, Ualquer
+ * @version 1.0
+ */
 
 
 public class ExibirProdutosPanel extends JPanel{

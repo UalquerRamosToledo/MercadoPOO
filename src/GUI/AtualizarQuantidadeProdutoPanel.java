@@ -6,6 +6,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+/**
+ * Esta é a classe para a Interface Grafica para atualizar a Quantidade de um Produto no Estoque.
+ *
+ * @author Deivid, Ualquer
+ * @version 1.0
+ */
 
 public class AtualizarQuantidadeProdutoPanel extends JPanel{
     RelacaoDeProdutos relacaoDeProdutos;

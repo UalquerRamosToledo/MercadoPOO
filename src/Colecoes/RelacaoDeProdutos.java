@@ -2,12 +2,13 @@ package Colecoes;
 import Interfaces.IProdutos;
 import Fonte.Produto;
 import java.util.ArrayList;
-
+/**
+ * Esta é a classe para armazenar e tratar um arraylist de Produtos.
+ *
+ * @author Deivid, Ualquer
+ * @version 1.0
+ */
 public class RelacaoDeProdutos implements IProdutos {
-    /**
-     * Array do tipo Produto
-     * @autor Ualquer
-     */
     private ArrayList<Produto> relacaoDeProdutos;
 
     public RelacaoDeProdutos() {

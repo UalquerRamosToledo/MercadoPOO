@@ -1,12 +1,15 @@
 package Fonte;
-// código, data e relação de itens, onde cada item é composto
-//por um produto e a quantidade vendida.
-
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+/**
+ * Esta é a classe de Nota Fiscal.
+ *
+ * @author Deivid, Ualquer
+ * @version 1.0
+ */
 
 public class NotaFiscal {
     private int codigo;
