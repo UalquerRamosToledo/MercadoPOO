@@ -4,6 +4,8 @@ import Colecoes.RelacaoDeNotasFiscais;
 import Colecoes.RelacaoDeProdutos;
 import Fonte.NotaFiscal;
 import Fonte.Produto;
+import Fonte.ProdutoQuilo;
+import Fonte.ProdutoUnidade;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,14 +21,18 @@ import java.awt.event.KeyListener;
  */
 
 public class VendaPanel extends JPanel {
-    RelacaoDeProdutos relacaoDeProdutos;
-    RelacaoDeNotasFiscais relacaoDeNotasFiscais;
-    JButton finalizarVendaBtn, adicionarProdutoBtn;
-    JLabel codProdutoLabel, nomeLabel, descricaoLabel, quantidadeLabel, precoLabel;
-    JTextField codProdutoField, nomeField, descricaoField, quantidadeField, precoField;
+    private RelacaoDeProdutos relacaoDeProdutos;
+    private RelacaoDeNotasFiscais relacaoDeNotasFiscais;
+
+    private NotaFiscal notaFiscal;
+    private JButton finalizarVendaBtn, adicionarProdutoBtn;
+    private JLabel codProdutoLabel, nomeLabel, descricaoLabel, quantidadeLabel, precoLabel;
+    private JTextField codProdutoField, nomeField, descricaoField, quantidadeField, precoField;
+    private TextArea listaDeItens;
     public VendaPanel(RelacaoDeProdutos relacaoDeProdutos, RelacaoDeNotasFiscais relacaoDeNotasFiscais){
         this.relacaoDeProdutos = relacaoDeProdutos;
         this.relacaoDeNotasFiscais = relacaoDeNotasFiscais;
+        notaFiscal = new NotaFiscal();
 
         JPanel panel = new JPanel(new GridLayout(10,1));
         codProdutoLabel = new JLabel("Digite o código do produto e tecle Enter: ");
@@ -49,6 +55,10 @@ public class VendaPanel extends JPanel {
 
         adicionarProdutoBtn = new JButton(" Adicionar ");
         finalizarVendaBtn = new JButton(" Finalizar ");
+
+        listaDeItens = new TextArea("CARRINHO  \n",2,1);
+        listaDeItens.setEditable(false);
+
 
         codProdutoField.addKeyListener(new KeyListener() {
             @Override
@@ -83,11 +93,14 @@ public class VendaPanel extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 try {
                     int cod = Integer.parseInt(codProdutoField.getText());
-                    relacaoDeProdutos.getProduto(cod);
+                    String nome = relacaoDeProdutos.getProduto(cod).getNome();
+                    String descricao = relacaoDeProdutos.getProduto(cod).getDescricao();
+                    Double preco = relacaoDeProdutos.getProduto(cod).getPreco();
+                    int quantidade = Integer.parseInt(quantidadeField.getText());
+                    Produto produto = new ProdutoUnidade(nome, descricao, preco, quantidade);
 
+                    notaFiscal.adicionarProduto(produto);
 
-
-                    NotaFiscal notaFiscal = new NotaFiscal();
 
                 }catch (Exception ex){
                     JOptionPane.showMessageDialog(null,"Não foi possível adiconar o produto.","Erro !", JOptionPane.INFORMATION_MESSAGE);
@@ -100,7 +113,8 @@ public class VendaPanel extends JPanel {
         finalizarVendaBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+            relacaoDeNotasFiscais.addNotaFiscal(notaFiscal);
+                System.out.println(notaFiscal.toString());
 
             }
         });
@@ -117,6 +131,7 @@ public class VendaPanel extends JPanel {
         panel.add(precoField);
         panel.add(finalizarVendaBtn);
         panel.add(adicionarProdutoBtn);
+        panel.add(listaDeItens);
         panel.setVisible(true);
         add(panel);
     }
