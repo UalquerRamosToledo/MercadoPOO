@@ -129,7 +129,6 @@ public class MercadoFrame extends JFrame {
         setSize(1200, 800);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        //setLayout(new GridBagLayout());
         setVisible(true);
     }
 }

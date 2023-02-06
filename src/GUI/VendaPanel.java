@@ -97,10 +97,9 @@ public class VendaPanel extends JPanel {
                     String descricao = relacaoDeProdutos.getProduto(cod).getDescricao();
                     Double preco = relacaoDeProdutos.getProduto(cod).getPreco();
                     int quantidade = Integer.parseInt(quantidadeField.getText());
+
                     Produto produto = new ProdutoUnidade(nome, descricao, preco, quantidade);
-
                     notaFiscal.adicionarProduto(produto);
-
 
                 }catch (Exception ex){
                     JOptionPane.showMessageDialog(null,"Não foi possível adiconar o produto.","Erro !", JOptionPane.INFORMATION_MESSAGE);
@@ -114,7 +113,7 @@ public class VendaPanel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
             relacaoDeNotasFiscais.addNotaFiscal(notaFiscal);
-                System.out.println(notaFiscal.toString());
+            JOptionPane.showMessageDialog(null,"Nota fiscal adicionada.","Venda finalizada!", JOptionPane.INFORMATION_MESSAGE);
 
             }
         });
